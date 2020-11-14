@@ -8,18 +8,23 @@ import java.util.List;
 
 public class newSort {
 	public static void main(String[] args) throws IOException {
-		if(args.length!=1) {
+		
+		if(args.length==0) {
 			System.out.println("plase supply an argument : file name ");
-			
+			return;
+		}
+		for (String arg : args) {
+			System.out.println(arg);
 		}
 		Path mypath = Paths.get(args[0]);
-
+	
 		List<String> lines = Files.readAllLines(mypath);
 		Collections.sort(lines);
 		
+	
 		for (String s : lines) {
 			System.out.println(s);
 		}
-	}
-
+	} 
+ 
 }
